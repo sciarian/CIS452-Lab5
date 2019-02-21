@@ -5,23 +5,27 @@
 #include <sys/ipc.h>
 #include <sys/shm.h>
 #include <string.h>
+#include <unistd.h>
 
 #define FOO 4096
 
 int main(){
 
-        //Initialize variables.	
+	//Initialize variables.	
 	int shmId;
 	char *shmPtr;
 	key_t key;
 	char quit[100] = "quit";	
+	char buffer[1024];
+	int index;
 
 	struct shared_buffer{
 		char buffer[1024];
-		int isReading;
+		int isReading[2];
 		int isWriting;
+		int nextReaderIndex;
 	};
-	struct shared_buffer s_buf;
+	struct shared_buffer * s_buf;
 
 	//Generate key.
 	key = ftok("server",100);
@@ -38,28 +42,33 @@ int main(){
 		exit(1);
 	}
 
-	
+	s_buf = (struct shared_buffer *) shmPtr;
+	index = s_buf->nextReaderIndex;
+	s_buf->nextReaderIndex += 1;
+
+	printf("\nReady to read, my index is: %d\n",index);
+
 	//Loop and read
 	while(1){
-		memcpy(&s_buf,shmPtr,sizeof(struct shared_buffer));
-		//if it is out turn to read read TODO
-		if(s_buf.isReading == 1){
-			
-			printf("\nRead: %s\n", s_buf.buffer);
+		printf("Waiting for input...\n");
+		sleep(0.250);
+		while(s_buf->isWriting == 1);
+		s_buf->isReading[index] = 1;
+		strcpy(buffer, s_buf->buffer);	
+		printf("\nRead: %s", buffer);
 
-			if(strncmp(quit,shmPtr,4) == 0){
-				break;
-			}
-
-			s_buf.isReading  = 0;
-			s_buf.isWriting = 1;
-	
-			memcpy(shmPtr,&s_buf,sizeof(struct shared_buffer));
+		if(strncmp(quit,buffer,4) == 0){
+			break;
 		}
-		 
-	}	
 
-	//Detach	
+		s_buf->isReading[index]  = 0;
+
+	}
+
+	system("clear");
+	printf("\nGood bye!\n");	
+
+	//Detach
 	if (shmdt(shmPtr) < 0){
 		perror("Just can't let go\n");
 		exit(1);
@@ -68,9 +77,9 @@ int main(){
 
 	//Deallocate (Leave this for the writer???)
 	/*
-	if (shmctl(shmId, IPC_RMID, 0) < 0){
-		perror("can't deallocate\n");
-		exit(1);
-	}
-	*/
+	   if (shmctl(shmId, IPC_RMID, 0) < 0){
+	   perror("can't deallocate\n");
+	   exit(1);
+	   }
+	   */
 }

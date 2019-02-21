@@ -7,27 +7,40 @@
 #include <string.h>
 
 #define FOO 4096
+#define rSIZE 3
+
+int anyoneReading(int readers[2]){
+	int i;
+	for(i=0; i<rSIZE; i++)
+		if(readers[i]==1)
+			return 1;
+	return 0;	
+}
 
 int main(){
-        //Initialize variables.	
+	//Initialize variables.	
 	int shmId;
 	char *shmPtr;
 	key_t key;
-	char quit[100];
-
-	memcpy(quit,"quit\0",5);
-
+	char quit[100] = "quit";
 
 	struct shared_buffer
 	{
 		char buffer[1024];
-		int isReading;
+		int isReading[2];
 		int isWriting;
+		int nextReaderIndex;
 	};
 
-	struct shared_buffer s_buf;
-	s_buf.isReading = 0;
-	s_buf.isWriting = 1;
+	struct shared_buffer s_buf_struct;
+	strcpy(s_buf_struct.buffer,"");
+	s_buf_struct.nextReaderIndex = 0;
+	s_buf_struct.isWriting = 1;
+
+	int i;
+	for(i=0; i<rSIZE; i++){
+		s_buf_struct.isReading[i] = 0;
+	}
 
 	//Generate key.
 	if((key = ftok("server",100))>0){
@@ -47,16 +60,22 @@ int main(){
 		exit(1);
 	}
 
+
+	memcpy(shmPtr,&s_buf_struct,sizeof(struct shared_buffer));
+	struct shared_buffer * s_buf = (struct shared_buffer *) shmPtr; 
+
 	//Loop and read
 	while(1){
+		while(anyoneReading(s_buf->isReading) == 1);
+		
+		s_buf->isWriting  = 1; 
 		printf("\nEnter a message to sent to the shared memory segment.\n");
-		fgets(s_buf.buffer,1024,stdin);
-		s_buf.isWriting = 0;
-		s_buf.isReading = 1;
-		memcpy(shmPtr,&s_buf,sizeof(struct shared_buffer));
-	
-		if(strncmp(s_buf.buffer,quit,4)==0){
-				break;
+		fgets(s_buf->buffer,1024,stdin);
+		
+		s_buf->isWriting = 0;
+
+		if(strncmp(s_buf->buffer,quit,4)==0){
+			break;
 		}
 	}	
 
