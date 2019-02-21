@@ -1,0 +1,419 @@
+Script started on 2019-02-20 15:04:13-05:00 [TERM="xterm" TTY="/dev/pts/11" COLUMNS="93" LINES="55"]
+]0;sciarian@eos05:~/Documents/cis-452/lab5[sciarian@eos05 lab5]$ icps[K[K[Kpcs
+
+------ Message Queues --------
+key        msqid      owner      perms      used-bytes   messages    
+
+------ Shared Memory Segments --------
+key        shmid      owner      perms      bytes      nattch     status      
+0x00000000 2131329024 sciarian   600        4096       0                       
+0x00000000 2101084161 lxdm       600        67108864   2          dest         
+0x00000000 3375106    sheareca   600        524288     2          dest         
+0x00000000 3276803    sheareca   600        524288     2          dest         
+0x00000000 3571716    sheareca   600        524288     2          dest         
+0x00000000 3670021    sheareca   600        524288     2          dest         
+0x00000000 3735558    sheareca   600        524288     2          dest         
+0x00000000 3899399    sheareca   600        524288     2          dest         
+0x00000000 3997704    sheareca   600        4194304    2          dest         
+0x00000000 4030473    sheareca   600        16777216   2          dest         
+0x00000000 74514442   fountaig   600        524288     2          dest         
+0x00000000 7766027    hongsyvp   600        393216     2          dest         
+0x00000000 4194316    sheareca   600        1048576    2          dest         
+0x00000000 7045133    hongsyvp   600        67108864   2          dest         
+0x00000000 7077902    hongsyvp   600        393216     1          dest         
+0x00000000 8617999    hongsyvp   600        2097152    2          dest         
+0x00000000 8093712    hongsyvp   600        393216     2          dest         
+0x00000000 8945681    kingjust   600        524288     2          dest         
+0x00000000 9764882    kingjust   600        524288     2          dest         
+0x00000000 9043987    kingjust   600        524288     2          dest         
+0x00000000 9240596    kingjust   600        524288     2          dest         
+0x00000000 9306133    kingjust   600        524288     2          dest         
+0x00000000 7798806    hongsyvp   600        12288      2          dest         
+0x00000000 9469975    kingjust   600        4194304    2          dest         
+0x00000000 9568280    kingjust   600        524288     2          dest         
+0x00000000 7929881    hongsyvp   600        393216     2          dest         
+0x00000000 8126490    hongsyvp   600        393216     2          dest         
+0x00000000 9601051    kingjust   600        16777216   2          dest         
+0x00000000 9633820    kingjust   600        67108864   2          dest         
+0x00000000 9666589    kingjust   600        524288     2          dest         
+0x00000000 9797662    kingjust   600        16777216   2          dest         
+0x00000000 10027039   kingjust   600        16777216   2          dest         
+0x00000000 9928736    kingjust   600        2097152    2          dest         
+0x00000000 74547233   fountaig   600        8388608    2          dest         
+0x00000000 38699042   fountaig   600        67108864   2          dest         
+0x00000000 38633507   fountaig   600        393216     2          dest         
+0x00000000 38666276   fountaig   600        2097152    2          dest         
+0x00000000 38830117   fountaig   600        393216     2          dest         
+0x00000000 10551334   kingjust   600        524288     2          dest         
+0x00000000 38862887   fountaig   600        12288      2          dest         
+0x00000000 2101116968 lxdm       600        393216     2          dest         
+0x00000000 28934185   sheareca   600        19372      2          dest         
+0x00000000 74874922   fountaig   700        1945600    2          dest         
+0x00000000 76447787   fountaig   600        1048576    2          dest         
+0x00000000 2132049964 fountaig   600        524288     2          dest         
+0x00000000 1404829746 fountaig   600        393216     2          dest         
+0x00000000 1048313919 carsonsa   600        16777216   2          dest         
+0x00000000 1047691328 carsonsa   600        524288     2          dest         
+0x00000000 1047822404 carsonsa   600        524288     2          dest         
+0x00000000 1047986245 carsonsa   600        524288     2          dest         
+0x00000000 1048084551 carsonsa   600        524288     2          dest         
+0x00000000 1048182856 carsonsa   600        4194304    2          dest         
+0x00000000 1048412233 carsonsa   600        524288     2          dest         
+0x00000000 1048248394 carsonsa   600        524288     2          dest         
+
+------ Semaphore Arrays --------
+key        semid      owner      perms      nsems     
+
+]0;sciarian@eos05:~/Documents/cis-452/lab5[sciarian@eos05 lab5]$ ipcs | less
+[?1049h[22;0;0t[?1h=
+------ Message Queues --------
+key        msqid      owner      perms      used-bytes   messages    
+
+------ Shared Memory Segments --------
+key        shmid      owner      perms      bytes      nattch     status      
+0x00000000 2131329024 sciarian   600        4096       0                       
+0x00000000 2101084161 lxdm       600        67108864   2          dest         
+0x00000000 3375106    sheareca   600        524288     2          dest         
+0x00000000 3276803    sheareca   600        524288     2          dest         
+0x00000000 3571716    sheareca   600        524288     2          dest         
+0x00000000 3670021    sheareca   600        524288     2          dest         
+0x00000000 3735558    sheareca   600        524288     2          dest         
+0x00000000 3899399    sheareca   600        524288     2          dest         
+0x00000000 3997704    sheareca   600        4194304    2          dest         
+0x00000000 4030473    sheareca   600        16777216   2          dest         
+0x00000000 74514442   fountaig   600        524288     2          dest         
+0x00000000 7766027    hongsyvp   600        393216     2          dest         
+0x00000000 4194316    sheareca   600        1048576    2          dest         
+0x00000000 7045133    hongsyvp   600        67108864   2          dest         
+0x00000000 7077902    hongsyvp   600        393216     1          dest         
+0x00000000 8617999    hongsyvp   600        2097152    2          dest         
+0x00000000 8093712    hongsyvp   600        393216     2          dest         
+0x00000000 8945681    kingjust   600        524288     2          dest         
+0x00000000 9764882    kingjust   600        524288     2          dest         
+0x00000000 9043987    kingjust   600        524288     2          dest         
+0x00000000 9240596    kingjust   600        524288     2          dest         
+0x00000000 9306133    kingjust   600        524288     2          dest         
+0x00000000 7798806    hongsyvp   600        12288      2          dest         
+0x00000000 9469975    kingjust   600        4194304    2          dest         
+0x00000000 9568280    kingjust   600        524288     2          dest         
+0x00000000 7929881    hongsyvp   600        393216     2          dest         
+0x00000000 8126490    hongsyvp   600        393216     2          dest         
+0x00000000 9601051    kingjust   600        16777216   2          dest         
+0x00000000 9633820    kingjust   600        67108864   2          dest         
+0x00000000 9666589    kingjust   600        524288     2          dest         
+0x00000000 9797662    kingjust   600        16777216   2          dest         
+0x00000000 10027039   kingjust   600        16777216   2          dest         
+0x00000000 9928736    kingjust   600        2097152    2          dest         
+0x00000000 74547233   fountaig   600        8388608    2          dest         
+0x00000000 38699042   fountaig   600        67108864   2          dest         
+0x00000000 38633507   fountaig   600        393216     2          dest         
+0x00000000 38666276   fountaig   600        2097152    2          dest         
+0x00000000 38830117   fountaig   600        393216     2          dest         
+0x00000000 10551334   kingjust   600        524288     2          dest         
+0x00000000 38862887   fountaig   600        12288      2          dest         
+0x00000000 2101116968 lxdm       600        393216     2          dest         
+0x00000000 28934185   sheareca   600        19372      2          dest         
+0x00000000 74874922   fountaig   700        1945600    2          dest         
+0x00000000 76447787   fountaig   600        1048576    2          dest         
+0x00000000 2132672556 fountaig   600        524288     1          dest         
+0x00000000 1404829746 fountaig   600        393216     2          dest         
+0x00000000 1048313919 carsonsa   600        16777216   2          dest         
+0x00000000 1047691328 carsonsa   600        524288     2          dest         
+:[K[K/[Kss[Kcc[Kii[Kaa[Krr[Kii[Kaa[Knn[K[1;1H
+[2;1H------ Message Queues --------
+[3;1Hkey        msqid      owner      perms      used-bytes   messages    
+[4;1H
+[5;1H------ Shared Memory Segments --------
+[6;1Hkey        shmid      owner      perms      bytes      nattch     status      
+[7;1H0x00000000 2131329024 sciarian   600        4096       0                       
+[8;1H0x00000000 2101084161 lxdm       600        67108864   2          dest         
+[9;1H0x00000000 3375106    sheareca   600        524288     2          dest         
+[10;1H0x00000000 3276803    sheareca   600        524288     2          dest         
+[11;1H0x00000000 3571716    sheareca   600        524288     2          dest         
+[12;1H0x00000000 3670021    sheareca   600        524288     2          dest         
+[13;1H0x00000000 3735558    sheareca   600        524288     2          dest         
+[14;1H0x00000000 3899399    sheareca   600        524288     2          dest         
+[15;1H0x00000000 3997704    sheareca   600        4194304    2          dest         
+[16;1H0x00000000 4030473    sheareca   600        16777216   2          dest         
+[17;1H0x00000000 74514442   fountaig   600        524288     2          dest         
+[18;1H0x00000000 7766027    hongsyvp   600        393216     2          dest         
+[19;1H0x00000000 4194316    sheareca   600        1048576    2          dest         
+[20;1H0x00000000 7045133    hongsyvp   600        67108864   2          dest         
+[21;1H0x00000000 7077902    hongsyvp   600        393216     1          dest         
+[22;1H0x00000000 8617999    hongsyvp   600        2097152    2          dest         
+[23;1H0x00000000 8093712    hongsyvp   600        393216     2          dest         
+[24;1H0x00000000 8945681    kingjust   600        524288     2          dest         
+[25;1H0x00000000 9764882    kingjust   600        524288     2          dest         
+[26;1H0x00000000 9043987    kingjust   600        524288     2          dest         
+[27;1H0x00000000 9240596    kingjust   600        524288     2          dest         
+[28;1H0x00000000 9306133    kingjust   600        524288     2          dest         
+[29;1H0x00000000 7798806    hongsyvp   600        12288      2          dest         
+[30;1H0x00000000 9469975    kingjust   600        4194304    2          dest         
+[31;1H0x00000000 9568280    kingjust   600        524288     2          dest         
+[32;1H0x00000000 7929881    hongsyvp   600        393216     2          dest         
+[33;1H0x00000000 8126490    hongsyvp   600        393216     2          dest         
+[34;1H0x00000000 9601051    kingjust   600        16777216   2          dest         
+[35;1H0x00000000 9633820    kingjust   600        67108864   2          dest         
+[36;1H0x00000000 9666589    kingjust   600        524288     2          dest         
+[37;1H0x00000000 9797662    kingjust   600        16777216   2          dest         
+[38;1H0x00000000 10027039   kingjust   600        16777216   2          dest         
+[39;1H0x00000000 9928736    kingjust   600        2097152    2          dest         
+[40;1H0x00000000 74547233   fountaig   600        8388608    2          dest         
+[41;1H0x00000000 38699042   fountaig   600        67108864   2          dest         
+[42;1H0x00000000 38633507   fountaig   600        393216     2          dest         
+[43;1H0x00000000 38666276   fountaig   600        2097152    2          dest         
+[44;1H0x00000000 38830117   fountaig   600        393216     2          dest         
+[45;1H0x00000000 10551334   kingjust   600        524288     2          dest         
+[46;1H0x00000000 38862887   fountaig   600        12288      2          dest         
+[47;1H0x00000000 2101116968 lxdm       600        393216     2          dest         
+[48;1H0x00000000 28934185   sheareca   600        19372      2          dest         
+[49;1H0x00000000 74874922   fountaig   700        1945600    2          dest         
+[50;1H0x00000000 76447787   fountaig   600        1048576    2          dest         
+[51;1H0x00000000 2132672556 fountaig   600        524288     1          dest         
+[52;1H0x00000000 1404829746 fountaig   600        393216     2          dest         
+[53;1H0x00000000 1048313919 carsonsa   600        16777216   2          dest         
+[54;1H0x00000000 1047691328 carsonsa   600        524288     2          dest         
+[55;1H[1;1H
+[2;1H------ Message Queues --------
+[3;1Hkey        msqid      owner      perms      used-bytes   messages    
+[4;1H
+[5;1H------ Shared Memory Segments --------
+[6;1Hkey        shmid      owner      perms      bytes      nattch     status      
+[7;1H0x00000000 2131329024 [7msciarian[27m   600        4096       0                       
+[8;1H0x00000000 2101084161 lxdm       600        67108864   2          dest         
+[9;1H0x00000000 3375106    sheareca   600        524288     2          dest         
+[10;1H0x00000000 3276803    sheareca   600        524288     2          dest         
+[11;1H0x00000000 3571716    sheareca   600        524288     2          dest         
+[12;1H0x00000000 3670021    sheareca   600        524288     2          dest         
+[13;1H0x00000000 3735558    sheareca   600        524288     2          dest         
+[14;1H0x00000000 3899399    sheareca   600        524288     2          dest         
+[15;1H0x00000000 3997704    sheareca   600        4194304    2          dest         
+[16;1H0x00000000 4030473    sheareca   600        16777216   2          dest         
+[17;1H0x00000000 74514442   fountaig   600        524288     2          dest         
+[18;1H0x00000000 7766027    hongsyvp   600        393216     2          dest         
+[19;1H0x00000000 4194316    sheareca   600        1048576    2          dest         
+[20;1H0x00000000 7045133    hongsyvp   600        67108864   2          dest         
+[21;1H0x00000000 7077902    hongsyvp   600        393216     1          dest         
+[22;1H0x00000000 8617999    hongsyvp   600        2097152    2          dest         
+[23;1H0x00000000 8093712    hongsyvp   600        393216     2          dest         
+[24;1H0x00000000 8945681    kingjust   600        524288     2          dest         
+[25;1H0x00000000 9764882    kingjust   600        524288     2          dest         
+[26;1H0x00000000 9043987    kingjust   600        524288     2          dest         
+[27;1H0x00000000 9240596    kingjust   600        524288     2          dest         
+[28;1H0x00000000 9306133    kingjust   600        524288     2          dest         
+[29;1H0x00000000 7798806    hongsyvp   600        12288      2          dest         
+[30;1H0x00000000 9469975    kingjust   600        4194304    2          dest         
+[31;1H0x00000000 9568280    kingjust   600        524288     2          dest         
+[32;1H0x00000000 7929881    hongsyvp   600        393216     2          dest         
+[33;1H0x00000000 8126490    hongsyvp   600        393216     2          dest         
+[34;1H0x00000000 9601051    kingjust   600        16777216   2          dest         
+[35;1H0x00000000 9633820    kingjust   600        67108864   2          dest         
+[36;1H0x00000000 9666589    kingjust   600        524288     2          dest         
+[37;1H0x00000000 9797662    kingjust   600        16777216   2          dest         
+[38;1H0x00000000 10027039   kingjust   600        16777216   2          dest         
+[39;1H0x00000000 9928736    kingjust   600        2097152    2          dest         
+[40;1H0x00000000 74547233   fountaig   600        8388608    2          dest         
+[41;1H0x00000000 38699042   fountaig   600        67108864   2          dest         
+[42;1H0x00000000 38633507   fountaig   600        393216     2          dest         
+[43;1H0x00000000 38666276   fountaig   600        2097152    2          dest         
+[44;1H0x00000000 38830117   fountaig   600        393216     2          dest         
+[45;1H0x00000000 10551334   kingjust   600        524288     2          dest         
+[46;1H0x00000000 38862887   fountaig   600        12288      2          dest         
+[47;1H0x00000000 2101116968 lxdm       600        393216     2          dest         
+[48;1H0x00000000 28934185   sheareca   600        19372      2          dest         
+[49;1H0x00000000 74874922   fountaig   700        1945600    2          dest         
+[50;1H0x00000000 76447787   fountaig   600        1048576    2          dest         
+[51;1H0x00000000 2132672556 fountaig   600        524288     1          dest         
+[52;1H0x00000000 1404829746 fountaig   600        393216     2          dest         
+[53;1H0x00000000 1048313919 carsonsa   600        16777216   2          dest         
+[54;1H0x00000000 1047691328 carsonsa   600        524288     2          dest         
+[55;1H0x00000000 1047822404 carsonsa   600        524288     2          dest         
+0x00000000 1047986245 carsonsa   600        524288     2          dest         
+0x00000000 1048084551 carsonsa   600        524288     2          dest         
+0x00000000 1048182856 carsonsa   600        4194304    2          dest         
+0x00000000 1048412233 carsonsa   600        524288     2          dest         
+0x00000000 1048248394 carsonsa   600        524288     2          dest         
+:[K[K
+:[K[K[?1l>[?1049l[23;0;0t]0;sciarian@eos05:~/Documents/cis-452/lab5[sciarian@eos05 lab5]$ 
+]0;sciarian@eos05:~/Documents/cis-452/lab5[sciarian@eos05 lab5]$ ipcrm 213130924-213130924m213130924 213130924[C[C[C[C[C[C[C[C[C
+ipcrm: invalid id (213130924)
+]0;sciarian@eos05:~/Documents/cis-452/lab5[sciarian@eos05 lab5]$ ipcrm -m 213130924[K[K[K[K29024
+]0;sciarian@eos05:~/Documents/cis-452/lab5[sciarian@eos05 lab5]$ ipcs
+
+------ Message Queues --------
+key        msqid      owner      perms      used-bytes   messages    
+
+------ Shared Memory Segments --------
+key        shmid      owner      perms      bytes      nattch     status      
+0x00000000 2135523328 fountaig   600        524288     2          dest         
+0x00000000 2101084161 lxdm       600        67108864   2          dest         
+0x00000000 3375106    sheareca   600        524288     2          dest         
+0x00000000 3276803    sheareca   600        524288     2          dest         
+0x00000000 3571716    sheareca   600        524288     2          dest         
+0x00000000 3670021    sheareca   600        524288     2          dest         
+0x00000000 3735558    sheareca   600        524288     2          dest         
+0x00000000 3899399    sheareca   600        524288     2          dest         
+0x00000000 3997704    sheareca   600        4194304    2          dest         
+0x00000000 4030473    sheareca   600        16777216   2          dest         
+0x00000000 74514442   fountaig   600        524288     2          dest         
+0x00000000 7766027    hongsyvp   600        393216     2          dest         
+0x00000000 4194316    sheareca   600        1048576    2          dest         
+0x00000000 7045133    hongsyvp   600        67108864   2          dest         
+0x00000000 7077902    hongsyvp   600        393216     1          dest         
+0x00000000 8617999    hongsyvp   600        2097152    2          dest         
+0x00000000 8093712    hongsyvp   600        393216     2          dest         
+0x00000000 8945681    kingjust   600        524288     2          dest         
+0x00000000 9764882    kingjust   600        524288     2          dest         
+0x00000000 9043987    kingjust   600        524288     2          dest         
+0x00000000 9240596    kingjust   600        524288     2          dest         
+0x00000000 9306133    kingjust   600        524288     2          dest         
+0x00000000 7798806    hongsyvp   600        12288      2          dest         
+0x00000000 9469975    kingjust   600        4194304    2          dest         
+0x00000000 9568280    kingjust   600        524288     2          dest         
+0x00000000 7929881    hongsyvp   600        393216     2          dest         
+0x00000000 8126490    hongsyvp   600        393216     2          dest         
+0x00000000 9601051    kingjust   600        16777216   2          dest         
+0x00000000 9633820    kingjust   600        67108864   2          dest         
+0x00000000 9666589    kingjust   600        524288     2          dest         
+0x00000000 9797662    kingjust   600        16777216   2          dest         
+0x00000000 10027039   kingjust   600        16777216   2          dest         
+0x00000000 9928736    kingjust   600        2097152    2          dest         
+0x00000000 74547233   fountaig   600        8388608    2          dest         
+0x00000000 38699042   fountaig   600        67108864   2          dest         
+0x00000000 38633507   fountaig   600        393216     2          dest         
+0x00000000 38666276   fountaig   600        2097152    2          dest         
+0x00000000 38830117   fountaig   600        393216     2          dest         
+0x00000000 10551334   kingjust   600        524288     2          dest         
+0x00000000 38862887   fountaig   600        12288      2          dest         
+0x00000000 2101116968 lxdm       600        393216     2          dest         
+0x00000000 28934185   sheareca   600        19372      2          dest         
+0x00000000 74874922   fountaig   700        1945600    2          dest         
+0x00000000 76447787   fountaig   600        1048576    2          dest         
+0x00000000 1404829746 fountaig   600        393216     2          dest         
+0x00000000 1048313919 carsonsa   600        16777216   2          dest         
+0x00000000 1047691328 carsonsa   600        524288     2          dest         
+0x00000000 1047822404 carsonsa   600        524288     2          dest         
+0x00000000 1047986245 carsonsa   600        524288     2          dest         
+0x00000000 1048084551 carsonsa   600        524288     2          dest         
+0x00000000 1048182856 carsonsa   600        4194304    2          dest         
+0x00000000 1048412233 carsonsa   600        524288     2          dest         
+0x00000000 1048248394 carsonsa   600        524288     2          dest         
+
+------ Semaphore Arrays --------
+key        semid      owner      perms      nsems     
+
+]0;sciarian@eos05:~/Documents/cis-452/lab5[sciarian@eos05 lab5]$ ipcs | ;[Kless
+[?1049h[22;0;0t[?1h=
+------ Message Queues --------
+key        msqid      owner      perms      used-bytes   messages    
+
+------ Shared Memory Segments --------
+key        shmid      owner      perms      bytes      nattch     status      
+0x00000000 2135654400 fountaig   600        524288     2          dest         
+0x00000000 2101084161 lxdm       600        67108864   2          dest         
+0x00000000 3375106    sheareca   600        524288     2          dest         
+0x00000000 3276803    sheareca   600        524288     2          dest         
+0x00000000 3571716    sheareca   600        524288     2          dest         
+0x00000000 3670021    sheareca   600        524288     2          dest         
+0x00000000 3735558    sheareca   600        524288     2          dest         
+0x00000000 3899399    sheareca   600        524288     2          dest         
+0x00000000 3997704    sheareca   600        4194304    2          dest         
+0x00000000 4030473    sheareca   600        16777216   2          dest         
+0x00000000 74514442   fountaig   600        524288     2          dest         
+0x00000000 7766027    hongsyvp   600        393216     2          dest         
+0x00000000 4194316    sheareca   600        1048576    2          dest         
+0x00000000 7045133    hongsyvp   600        67108864   2          dest         
+0x00000000 7077902    hongsyvp   600        393216     1          dest         
+0x00000000 8617999    hongsyvp   600        2097152    2          dest         
+0x00000000 8093712    hongsyvp   600        393216     2          dest         
+0x00000000 8945681    kingjust   600        524288     2          dest         
+0x00000000 9764882    kingjust   600        524288     2          dest         
+0x00000000 9043987    kingjust   600        524288     2          dest         
+0x00000000 9240596    kingjust   600        524288     2          dest         
+0x00000000 9306133    kingjust   600        524288     2          dest         
+0x00000000 7798806    hongsyvp   600        12288      2          dest         
+0x00000000 9469975    kingjust   600        4194304    2          dest         
+0x00000000 9568280    kingjust   600        524288     2          dest         
+0x00000000 7929881    hongsyvp   600        393216     2          dest         
+0x00000000 8126490    hongsyvp   600        393216     2          dest         
+0x00000000 9601051    kingjust   600        16777216   2          dest         
+0x00000000 9633820    kingjust   600        67108864   2          dest         
+0x00000000 9666589    kingjust   600        524288     2          dest         
+0x00000000 9797662    kingjust   600        16777216   2          dest         
+0x00000000 10027039   kingjust   600        16777216   2          dest         
+0x00000000 9928736    kingjust   600        2097152    2          dest         
+0x00000000 74547233   fountaig   600        8388608    2          dest         
+0x00000000 38699042   fountaig   600        67108864   2          dest         
+0x00000000 38633507   fountaig   600        393216     2          dest         
+0x00000000 38666276   fountaig   600        2097152    2          dest         
+0x00000000 38830117   fountaig   600        393216     2          dest         
+0x00000000 10551334   kingjust   600        524288     2          dest         
+0x00000000 38862887   fountaig   600        12288      2          dest         
+0x00000000 2101116968 lxdm       600        393216     2          dest         
+0x00000000 28934185   sheareca   600        19372      2          dest         
+0x00000000 74874922   fountaig   700        1945600    2          dest         
+0x00000000 76447787   fountaig   600        1048576    2          dest         
+0x00000000 1404829746 fountaig   600        393216     2          dest         
+0x00000000 1048313919 carsonsa   600        16777216   2          dest         
+0x00000000 1047691328 carsonsa   600        524288     2          dest         
+0x00000000 1047822404 carsonsa   600        524288     2          dest         
+:[K[K/[Kss[Kcc[Kii[Kaa[Krr[Kii[Kaa[Knn[K[1;1H
+[2;1H------ Message Queues --------
+[3;1Hkey        msqid      owner      perms      used-bytes   messages    
+[4;1H
+[5;1H------ Shared Memory Segments --------
+[6;1Hkey        shmid      owner      perms      bytes      nattch     status      
+[7;1H0x00000000 2135654400 fountaig   600        524288     2          dest         
+[8;1H0x00000000 2101084161 lxdm       600        67108864   2          dest         
+[9;1H0x00000000 3375106    sheareca   600        524288     2          dest         
+[10;1H0x00000000 3276803    sheareca   600        524288     2          dest         
+[11;1H0x00000000 3571716    sheareca   600        524288     2          dest         
+[12;1H0x00000000 3670021    sheareca   600        524288     2          dest         
+[13;1H0x00000000 3735558    sheareca   600        524288     2          dest         
+[14;1H0x00000000 3899399    sheareca   600        524288     2          dest         
+[15;1H0x00000000 3997704    sheareca   600        4194304    2          dest         
+[16;1H0x00000000 4030473    sheareca   600        16777216   2          dest         
+[17;1H0x00000000 74514442   fountaig   600        524288     2          dest         
+[18;1H0x00000000 7766027    hongsyvp   600        393216     2          dest         
+[19;1H0x00000000 4194316    sheareca   600        1048576    2          dest         
+[20;1H0x00000000 7045133    hongsyvp   600        67108864   2          dest         
+[21;1H0x00000000 7077902    hongsyvp   600        393216     1          dest         
+[22;1H0x00000000 8617999    hongsyvp   600        2097152    2          dest         
+[23;1H0x00000000 8093712    hongsyvp   600        393216     2          dest         
+[24;1H0x00000000 8945681    kingjust   600        524288     2          dest         
+[25;1H0x00000000 9764882    kingjust   600        524288     2          dest         
+[26;1H0x00000000 9043987    kingjust   600        524288     2          dest         
+[27;1H0x00000000 9240596    kingjust   600        524288     2          dest         
+[28;1H0x00000000 9306133    kingjust   600        524288     2          dest         
+[29;1H0x00000000 7798806    hongsyvp   600        12288      2          dest         
+[30;1H0x00000000 9469975    kingjust   600        4194304    2          dest         
+[31;1H0x00000000 9568280    kingjust   600        524288     2          dest         
+[32;1H0x00000000 7929881    hongsyvp   600        393216     2          dest         
+[33;1H0x00000000 8126490    hongsyvp   600        393216     2          dest         
+[34;1H0x00000000 9601051    kingjust   600        16777216   2          dest         
+[35;1H0x00000000 9633820    kingjust   600        67108864   2          dest         
+[36;1H0x00000000 9666589    kingjust   600        524288     2          dest         
+[37;1H0x00000000 9797662    kingjust   600        16777216   2          dest         
+[38;1H0x00000000 10027039   kingjust   600        16777216   2          dest         
+[39;1H0x00000000 9928736    kingjust   600        2097152    2          dest         
+[40;1H0x00000000 74547233   fountaig   600        8388608    2          dest         
+[41;1H0x00000000 38699042   fountaig   600        67108864   2          dest         
+[42;1H0x00000000 38633507   fountaig   600        393216     2          dest         
+[43;1H0x00000000 38666276   fountaig   600        2097152    2          dest         
+[44;1H0x00000000 38830117   fountaig   600        393216     2          dest         
+[45;1H0x00000000 10551334   kingjust   600        524288     2          dest         
+[46;1H0x00000000 38862887   fountaig   600        12288      2          dest         
+[47;1H0x00000000 2101116968 lxdm       600        393216     2          dest         
+[48;1H0x00000000 28934185   sheareca   600        19372      2          dest         
+[49;1H0x00000000 74874922   fountaig   700        1945600    2          dest         
+[50;1H0x00000000 76447787   fountaig   600        1048576    2          dest         
+[51;1H0x00000000 1404829746 fountaig   600        393216     2          dest         
+[52;1H0x00000000 1048313919 carsonsa   600        16777216   2          dest         
+[53;1H0x00000000 1047691328 carsonsa   600        524288     2          dest         
+[54;1H0x00000000 1047822404 carsonsa   600        524288     2          dest         
+[55;1H[1;1H
+[2;1H------ Message Queues --------
+[3;1Hkey        msqid      owner      perms      used-bytes   messages    
+[4;1H
+[5;1H------ Shared Memory Segments --------
+[6;1Hkey        shmid      owner      perms      b
