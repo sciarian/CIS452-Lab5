@@ -5,7 +5,7 @@
 #include <sys/ipc.h>
 #include <sys/shm.h>
 #include <string.h>
-#include <unistd.h>
+
 
 #define FOO 4096
 
@@ -15,15 +15,13 @@ int main(){
 	int shmId;
 	char *shmPtr;
 	key_t key;
-	char quit[100] = "quit";	
-	char buffer[1024];
-	int index;
+	char quit[100]   = "quit";	
+	char clear[100] = "clear";
 
 	struct shared_buffer{
 		char buffer[1024];
-		int isReading[2];
+		int isReading;
 		int isWriting;
-		int nextReaderIndex;
 	};
 	struct shared_buffer * s_buf;
 
@@ -42,29 +40,34 @@ int main(){
 		exit(1);
 	}
 
+	//Grab reference to shared memory segment.
 	s_buf = (struct shared_buffer *) shmPtr;
-	index = s_buf->nextReaderIndex;
-	s_buf->nextReaderIndex += 1;
 
-	printf("\nReady to read, my index is: %d\n",index);
+	//Clear screen.		
+	system("clear");
+	printf("\n");
 
 	//Loop and read
 	while(1){
-		printf("Waiting for input...\n");
-		sleep(0.250);
-		while(s_buf->isWriting == 1);
-		s_buf->isReading[index] = 1;
-		strcpy(buffer, s_buf->buffer);	
-		printf("\nRead: %s", buffer);
+		printf("Waiting for input...");
 
-		if(strncmp(quit,buffer,4) == 0){
+		//Wait fot writer
+		while(s_buf->isWriting == 1);
+		s_buf->isReading++;
+		printf("\tread: %s\n", s_buf->buffer);
+
+		if(strncmp(quit,s_buf->buffer,4) == 0){
 			break;
 		}
 
-		s_buf->isReading[index]  = 0;
+		if(strncmp(clear,s_buf->buffer,5) == 0){
+			system("clear");
+		}
 
+		s_buf->isReading--;
 	}
 
+	//Clear screen.
 	system("clear");
 	printf("\nGood bye!\n");	
 
@@ -73,13 +76,4 @@ int main(){
 		perror("Just can't let go\n");
 		exit(1);
 	}
-
-
-	//Deallocate (Leave this for the writer???)
-	/*
-	   if (shmctl(shmId, IPC_RMID, 0) < 0){
-	   perror("can't deallocate\n");
-	   exit(1);
-	   }
-	   */
 }

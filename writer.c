@@ -9,38 +9,24 @@
 #define FOO 4096
 #define rSIZE 3
 
-int anyoneReading(int readers[2]){
-	int i;
-	for(i=0; i<rSIZE; i++)
-		if(readers[i]==1)
-			return 1;
-	return 0;	
-}
-
 int main(){
 	//Initialize variables.	
 	int shmId;
 	char *shmPtr;
 	key_t key;
-	char quit[100] = "quit";
+	char clear[100] = "clear";
+	char quit[100]  = "quit";
 
-	struct shared_buffer
-	{
+	struct shared_buffer{
 		char buffer[1024];
-		int isReading[2];
+		int isReading;
 		int isWriting;
-		int nextReaderIndex;
 	};
 
 	struct shared_buffer s_buf_struct;
 	strcpy(s_buf_struct.buffer,"");
-	s_buf_struct.nextReaderIndex = 0;
+	s_buf_struct.isReading = 0;
 	s_buf_struct.isWriting = 1;
-
-	int i;
-	for(i=0; i<rSIZE; i++){
-		s_buf_struct.isReading[i] = 0;
-	}
 
 	//Generate key.
 	if((key = ftok("server",100))>0){
@@ -60,13 +46,19 @@ int main(){
 		exit(1);
 	}
 
-
+	//Copy shared buffer structure into shared memory.
 	memcpy(shmPtr,&s_buf_struct,sizeof(struct shared_buffer));
+
+	//Grab a pointer to the shared memory.
 	struct shared_buffer * s_buf = (struct shared_buffer *) shmPtr; 
 
-	//Loop and read
+	system("clear");
+
+	//Loop and read.
 	while(1){
-		while(anyoneReading(s_buf->isReading) == 1);
+
+		//Wait for readers
+		while(s_buf->isReading > 0);
 		
 		s_buf->isWriting  = 1; 
 		printf("\nEnter a message to sent to the shared memory segment.\n");
@@ -77,8 +69,13 @@ int main(){
 		if(strncmp(s_buf->buffer,quit,4)==0){
 			break;
 		}
+
+		if(strncmp(s_buf->buffer,clear,5)==0){
+			system("clear");
+		}
 	}	
 
+	//Clear screen.
 	system("clear");
 	printf("\nGood bye!\n");
 
@@ -88,7 +85,7 @@ int main(){
 		exit(1);
 	}
 
-	//Deallocate (Leave this for the writer???)
+	//Deallocate 
 	if (shmctl(shmId, IPC_RMID, 0) < 0){
 		perror("can't deallocate\n");
 		exit(1);
